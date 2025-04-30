@@ -1,0 +1,16 @@
+main {
+  position: fixed;
+  top: 50px;     /* Altura do header */
+  bottom: 40px;  /* Altura do footer + margem */
+  left: 0;
+  right: 0;
+  display: flex;
+  overflow: hidden; /* Impede scroll indesejado */
+}
+
+#map {
+  flex: 1;
+  height: 100%;
+  min-height: 400px; /* Altura mínima de segurança */
+  position: relative; /* Obrigatório para Leaflet */
+}

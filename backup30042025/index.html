@@ -27,7 +27,9 @@
 
   <!-- Conteúdo principal -->
   <main>
+    <!-- Sidebar Lateral -->
     <aside id="sidebar">
+      <!-- Cabeçalho fixo -->
       <div id="sidebar-header">
         <h2>CAMADAS DISPONÍVEIS</h2>
         <div id="filtro-container">
@@ -36,18 +38,26 @@
           <ul id="filtro-sugestoes"></ul>
         </div>
       </div>
+      
+      <!-- Corpo da sidebar que será preenchido dinamicamente -->
       <div id="sidebar-body">
-        <div id="sidebar-content"></div>
+        <div id="sidebar-content">
+          <!-- menu_camadas.js irá injetar aqui os grupos e layers -->
+        </div>
       </div>
     </aside>
-
+    
+    <!-- Mapa -->
     <section id="map"></section>
   </main>
 
+  <!-- Rodapé Fixo -->
   <footer class="rodape-fad">
     <div id="dataHora">Atualizado em: —</div>
 
-    <div class="rodape-crs" id="crs-container"></div>
+    <div class="rodape-crs" id="crs-container">
+      <!-- Coordenadas dinamicamente aqui -->
+    </div>
 
     <select id="tipo-coord" class="rodape-select">
       <option value="decimal">Decimal (°)</option>
@@ -64,26 +74,20 @@
       <option value="32723">WGS 84 / UTM zona 23S</option>
     </select>
 
-    <div class="rodape-escala" id="escala-container">Escala: 1:—</div>
+    <div class="rodape-escala" id="escala-container">
+      Escala: 1:—
+    </div>
+
     <div>Desenvolvido por: VPC-GEOSER</div>
   </footer>
 
-  <!-- Leaflet -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-  <!-- Variáveis globais -->
-  <script>
-    window.geoServerBase = "http://3.131.82.224:8080/geoserver";
-    window._activeLayers = {};
-  </script>
-
-  <!-- Scripts Módulo -->
-  <script type="module" src="js/layers.js"></script>
-  <script type="module" src="js/menu_camadas.js"></script>
-
-  <!-- Inicialização do mapa (isolada) -->
-  <script src="js/mapa.js"></script>
+  <!-- Scripts JS -->
+  <!-- primeiro carregue o módulo que exporta os grupos e layers -->
+  <script type="module" src="js/camadas.js"></script>
   <script src="js/header.js"></script>
+  <script src="js/mapa.js"></script>
+  <!-- menu_camadas.js agora importa ‘camadas.js’ e encaixa no #sidebar-content -->
+  <script type="module" src="js/menu_camadas.js"></script>
   <script src="js/rodape.js"></script>
 </body>
 </html>

@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>WebGIS</title>
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- CSS Modular -->
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/mapa.css" />
+  <link rel="stylesheet" href="css/menu_camadas.css" />
+  <link rel="stylesheet" href="css/rodape.css" />
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body>
+  <!-- Cabeçalho superior -->
+  <header class="header-fad">
+    <div class="logo-container">
+      <img src="logo_fad_completo_fundo_transparente.png" alt="Logo FAD" class="logo-central-fad" />
+      <div class="titulo-fad">
+        <h1>WebGIS</h1>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <!-- Painel lateral -->
+    <aside id="sidebar">
+      <div id="sidebar-header">
+        <h2>CAMADAS DISPONÍVEIS</h2>
+      </div>
+    
+      <div id="sidebar-body">
+        <input type="text" placeholder="Filtrar..." id="filtro-camadas" />
+        <div id="sidebar-content"></div>
+      </div>
+    </aside>
+    
+
+    <!-- Mapa -->
+    <section id="map"></section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="rodape-fad">
+    <div class="rodape-left">
+      <span id="dataHora">Atualizado em: —</span>
+    </div>
+    <div class="rodape-center">
+      <div id="coords">Lat: — Lon: —</div>
+      <div id="scale">Escala 1:—</div>
+    </div>
+    <div class="rodape-right">
+      Desenvolvido por: VPC-GEOSER
+    </div>
+  </footer>
+
+  <!-- JS Modular -->
+  <script src="js/mapa.js"></script>
+  <script src="js/menu_camadas.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/rodape.js"></script>
+</body>
+</html>

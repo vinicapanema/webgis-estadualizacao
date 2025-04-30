@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>WebGIS - FAD</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <header class="header-fad">
+    <div class="logo-container">
+      <img src="logo_fad_completo_fundo_transparente.png" alt="Logo FAD" class="logo-central-fad" />
+      <div class="titulo-fad">
+        <h1>Ferramenta de Visualização de Dados Geoespaciais</h1>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="map"></div>
+  </main>
+
+  <footer class="rodape-fad">
+    <span>Desenvolvido por VPC-GEOSER</span><br />
+    <span id="dataHora"></span>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+  <script>
+    document.getElementById("dataHora").textContent = "Atualizado em: " + new Date().toLocaleString("pt-BR");
+  </script>
+</body>
+</html>
